@@ -6,7 +6,7 @@ export const fetchPokemons = async (init: number) =>
       .map(async (value, index) =>
         (
           await fetch(`https://pokeapi.co/api/v2/pokemon/${++index}`, {
-            cache: 'no-store',
+            cache: 'force-cache',
           })
         ).json()
       )
@@ -15,6 +15,6 @@ export const fetchPokemons = async (init: number) =>
 export const fetchPokemon = async (id: number) =>
     (
       await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
-        cache: 'force-cache',
+        cache: 'no-store',
       })
     ).json()
