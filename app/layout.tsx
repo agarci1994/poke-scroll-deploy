@@ -1,7 +1,14 @@
-import { ReactNode } from "react"
-import { Header } from '@/components/Header/Header';
+import { ReactNode } from 'react'
+import { Header } from '@/components/Header/Header'
 import '@/styles/globals.css'
-  
+import { Montserrat } from 'next/font/google'
+
+const montserrat = Montserrat({
+  weight: ['400', '800'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 type Metadata = { title: string; author: string; description: string }
 const metadata: Metadata = {
   title: 'Technical test GeekSquare',
@@ -9,13 +16,9 @@ const metadata: Metadata = {
   description: 'App developed in february for GeekSquare',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="en" className={montserrat.className}>
       <head>
         <title>{metadata.title}</title>
         {(Object.keys(metadata) as Array<keyof typeof metadata>).map(
@@ -26,7 +29,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        {children}
+        <main className="p-5">{children}</main>
       </body>
     </html>
   )

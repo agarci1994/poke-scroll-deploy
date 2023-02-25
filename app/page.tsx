@@ -33,7 +33,7 @@ export default async function HomePage({ searchParams }: any) {
 
   return (
     <main>
-      <h3>En directo</h3>
+      <h3 className="font-extrabold uppercase pb-2">En directo</h3>
       <ul className="grid grid-cols-2 md:grid-cols-6 gap-3">
         <InfiniteScroll>
           <Suspense fallback={<p>Loading</p>}>
