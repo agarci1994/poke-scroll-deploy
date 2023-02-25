@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { Title } from '@/components/Title/Title';
+import { Header } from '@/components/Header/Header';
 import '@/styles/globals.css'
   
 type Metadata = { title: string; author: string; description: string }
@@ -25,7 +25,7 @@ export default function RootLayout({
         )}
       </head>
       <body>
-        <Title />
+        <Header />
         {children}
       </body>
     </html>

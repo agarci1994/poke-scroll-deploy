@@ -8,11 +8,10 @@ export default function Pokemon({ image, name, id, types }: IPokemon) {
       <Link href={String(id)} className="h-full">
         <div className="flex flex-col space-y-4 h-full items-center justify-center text-center">
           {image && <Image width="100" height="100" alt={name} src={image} />}
+          <h3 className="m-0">{name}</h3>
           {types.map((type: string) => (
             <p key={type}>{type}</p>
           ))}
-          <h2 className="text-semibold text-lg m-0">{id}</h2>
-          <h3 className="m-0">{name}</h3>
         </div>
       </Link>
     </li>

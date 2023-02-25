@@ -19,7 +19,7 @@ const fetchPokemons = async (init: number) =>
 
 export default async function HomePage({ searchParams }: any) {
   const { page } = searchParams
-  const intPage = parseInt(page ?? '0')
+  const intPage = parseInt(page ?? '24')
 
   const pokedexInfo: IPokemon[] = (await fetchPokemons(intPage)).map(
     ({ name, id, sprites, types }: any) =>

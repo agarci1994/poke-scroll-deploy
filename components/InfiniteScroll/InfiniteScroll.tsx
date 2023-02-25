@@ -48,6 +48,8 @@ export function InfiniteScroll({
       <ItemLoading />
       <ItemLoading />
       <ItemLoading />
+      <ItemLoading />
+      <ItemLoading />
     </>
-  );
+  )
 }

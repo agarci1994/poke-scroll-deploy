@@ -3,4 +3,5 @@ export interface IPokemon {
   name: string
   types: string[]
   id: string
+  stats?: any[]
 }
