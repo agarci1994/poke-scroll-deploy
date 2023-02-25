@@ -13,7 +13,7 @@ export default async function PokemonPage({ params }: Props) {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row space-x-12">
+      <div className="flex flex-col md:flex-row space-x-12 p-6">
         <div>
           <Image
             width={600}
