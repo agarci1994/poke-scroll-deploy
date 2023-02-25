@@ -25,27 +25,30 @@ export default async function PokemonPage({ params }: any) {
   )[0]
 
   return (
-    <main>
+    <main className="flex space-x-4">
       <div>
         <Image
-          width="600"
-          height="600"
+          fill={true}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           src={pokemonInfo.image}
           alt={pokemonInfo.name}
         />
       </div>
       <div>
-        <div>
-          <h2>{pokemonInfo.name}</h2>
+        <div className="p-4">
+          <h2 className="uppercase">{pokemonInfo.name}</h2>
           {pokemonInfo.types.map((type: string) => (
-            <p key={type}>{type}</p>
+            <p className="capitalize" key={type}>
+              {type}
+            </p>
           ))}
         </div>
-        <div>
-          <p>More stats</p>
+        <div className="font-extrabold bg-black">
+          <p className="pb-2">More stats</p>
           {pokemonInfo.stats?.map((stat) => (
             <p key={stat.prop}>
-              {stat.prop}: <span>{stat.value}</span>
+              {stat.prop}:{' '}
+              <span className="text-yellow font-extralight">{stat.value}</span>
             </p>
           ))}
         </div>

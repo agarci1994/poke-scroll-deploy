@@ -8,7 +8,7 @@ export default function Pokemon({ image, name, id, types }: IPokemon) {
       <Link href={String(id)} className="h-full">
         <div className="flex flex-col space-y-4 h-full items-center justify-center text-center">
           <div className="h-28">
-            {image && <Image width="100" height="100" alt={name} src={image} />}
+            {image && <Image width="700" height="475" alt={name} src={image} style={{ height: "inherit"}} />}
           </div>
           <div>
             <h3 className="m-0 uppercase font-extrabold">{name}</h3>
