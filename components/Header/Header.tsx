@@ -1,4 +1,4 @@
-import logo from "@/public/logo.svg"
+import logo from "@/public/static/logo.svg"
 import Image from "next/image"
 export function Header() {
   return (
