@@ -1,20 +1,10 @@
 import { ReactNode } from 'react'
+
 import { Header } from '@/components/Header/Header'
+import { montserrat } from '@/config/fonts.config'
+import { metadata } from "@/config/metadata.config"
+
 import '@/styles/globals.css'
-import { Montserrat } from 'next/font/google'
-
-const montserrat = Montserrat({
-  weight: ['400', '800'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-type Metadata = { title: string; author: string; description: string }
-const metadata: Metadata = {
-  title: 'Technical test GeekSquare',
-  author: 'Alejandro García',
-  description: 'App developed in february for GeekSquare',
-}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

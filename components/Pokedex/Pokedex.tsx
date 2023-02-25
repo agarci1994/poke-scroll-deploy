@@ -1,5 +1,5 @@
 import { IPokemon } from '@/interface/IPokemon'
-import Pokemon from '../Pokemon/Pokemon'
+import Pokemon from '@/components/Pokemon/Pokemon'
 
 type Props = { pokedex: IPokemon[] }
 export default function Page({ pokedex }: Props) {

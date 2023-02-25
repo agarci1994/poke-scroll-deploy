@@ -1,6 +1,7 @@
-import { IPokemon } from '@/interface/IPokemon'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { IPokemon } from '@/interface/IPokemon'
 
 export default function Pokemon({ image, name, id, types }: IPokemon) {
   return (

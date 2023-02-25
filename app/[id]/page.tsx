@@ -1,32 +1,19 @@
-import { IPokemon } from '@/interface/IPokemon'
 import Image from 'next/image'
 
-const fetchPokemon = async (id: number) =>
-  (
-    await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
-      cache: 'force-cache',
-    })
-  ).json()
+import { IPokemon } from '@/interface/IPokemon'
+import { fetchPokemon } from '@/services/pokemon.services'
+import { pokemonConstructor } from '@/model/pokemon.model'
 
-export default async function PokemonPage({ params }: any) {
+type Props = { params: { id: number } }
+export default async function PokemonPage({ params }: Props) {
   const { id } = params
   const pokemonInfo: IPokemon = [await fetchPokemon(id)].map(
-    ({ name, id, sprites, types, stats }: any) =>
-      ({
-        name,
-        id,
-        image: sprites.other.dream_world.front_default,
-        types: types.map(({ type }: any) => type.name),
-        stats: stats.map((st: any) => ({
-          prop: st.stat.name,
-          value: st.base_stat,
-        })),
-      } as IPokemon)
+    pokemonConstructor
   )[0]
 
   return (
     <>
-      <div className="flex space-x-12">
+      <div className="flex flex-col md:flex-row space-x-12">
         <div>
           <Image
             width={600}

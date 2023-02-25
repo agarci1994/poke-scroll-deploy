@@ -1,34 +1,18 @@
+import { Suspense } from 'react'
+
 import { InfiniteScroll } from '@/components/InfiniteScroll/InfiniteScroll'
 import Pokedex from '@/components/Pokedex/Pokedex'
 import { IPokemon } from '@/interface/IPokemon'
-import { Suspense } from 'react'
+import { fetchPokemons } from '@/services/pokemon.services'
+import { pokemonConstructor } from '@/model/pokemon.model'
 
-const fetchPokemons = async (init: number) =>
-  await Promise.all(
-    new Array(1000)
-      .slice(0, init)
-      .fill(1)
-      .map(async (value, index) =>
-        (
-          await fetch(`https://pokeapi.co/api/v2/pokemon/${++index}`, {
-            cache: 'no-store',
-          })
-        ).json()
-      )
-  )
-
-export default async function HomePage({ searchParams }: any) {
+type Props = { searchParams: { page: string } }
+export default async function HomePage({ searchParams }: Props) {
   const { page } = searchParams
   const intPage = parseInt(page ?? '24')
 
   const pokedexInfo: IPokemon[] = (await fetchPokemons(intPage)).map(
-    ({ name, id, sprites, types }: any) =>
-      ({
-        name,
-        id,
-        image: sprites.other.dream_world.front_default,
-        types: types.map(({ type }: any) => type.name),
-      } as IPokemon)
+    pokemonConstructor
   )
 
   return (
@@ -36,7 +20,7 @@ export default async function HomePage({ searchParams }: any) {
       <h3 className="font-extrabold uppercase pb-2">En directo</h3>
       <ul className="grid grid-cols-2 md:grid-cols-6 gap-3">
         <InfiniteScroll>
-          <Suspense fallback={<p>Loading</p>}>
+          <Suspense fallback={<p>Cargando...</p>}>
             <Pokedex pokedex={pokedexInfo} />
           </Suspense>
         </InfiniteScroll>

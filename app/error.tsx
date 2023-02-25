@@ -15,7 +15,7 @@ export default function Error({
 
   return (
     <div>
-      <h2>Lo siento, pero ha habido un error!</h2>
+      <h2>Lo siento, pero tenemos un problema!</h2>
       <Image
         width={200}
         height={200}

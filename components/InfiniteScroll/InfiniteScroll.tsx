@@ -1,7 +1,8 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ReactElement, useEffect, useRef } from "react";
-import { ItemLoading } from "../ItemLoading/ItemLoading";
+
+import { ItemLoading } from "@/components/ItemLoading/ItemLoading";
 
 export function InfiniteScroll({
   children,
@@ -39,17 +40,7 @@ export function InfiniteScroll({
     <>
       {children}
       <ItemLoading ref={ref} />
-      <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
-      <ItemLoading />
+      {Array(11).fill(1).map((_: number, i: number) => (<ItemLoading key={_ + i} />))}
     </>
   )
 }
