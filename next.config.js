@@ -5,6 +5,9 @@ const nextConfig = {
     scrollRestoration: true,
     runtime: 'experimental-edge',
   },
+  images: {
+    domains: ['raw.githubusercontent.com'],
+  },
   reactStrictMode: true,
 }
 

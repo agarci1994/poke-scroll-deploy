@@ -1,7 +1,16 @@
+/* eslint-disable camelcase */
 // INTERFACE
 import { IPokemon } from '@/interface/IPokemon'
 
-export const pokemonConstructor = ({ name, id, sprites, types, stats }: any) =>
+export const pokemonConstructor = ({
+  name,
+  id,
+  sprites,
+  types,
+  stats,
+  abilities,
+  held_items,
+}: any) =>
   ({
     name,
     id,
@@ -10,5 +19,10 @@ export const pokemonConstructor = ({ name, id, sprites, types, stats }: any) =>
     stats: stats.map((st: any) => ({
       prop: st.stat.name,
       value: st.base_stat,
+    })),
+    abilities: abilities.map(({ ability }: any) => ability.name),
+    items: held_items.map(({ item }: any) => ({
+      name: item.name,
+      info: item.url,
     })),
   } as IPokemon)

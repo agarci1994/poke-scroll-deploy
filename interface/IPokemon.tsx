@@ -4,4 +4,6 @@ export interface IPokemon {
   types: string[]
   id: string
   stats?: any[]
+  abilities?: string[]
+  items?: any[]
 }
