@@ -1,6 +1,8 @@
+import { MAX_POKEMON_AVAILABLE } from "@/constants/config.constans"
+
 export const fetchPokemons = async (init: number) =>
   await Promise.all(
-    new Array(1000)
+    new Array(MAX_POKEMON_AVAILABLE)
       .slice(0, init)
       .fill(1)
       .map(async (value, index) =>

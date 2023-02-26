@@ -3,6 +3,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { ReactElement, useEffect, useRef } from "react";
 
 import { ItemLoading } from "@/components/ItemLoading/ItemLoading";
+import { DEFAULT_PLACE_HOLDER, DEFAULT_RENDER, INIT_PAGE } from "@/constants/config.constans";
 
 export function InfiniteScroll({
   children,
@@ -20,7 +21,7 @@ export function InfiniteScroll({
         if (entry.isIntersecting) {
           const pageNumber: string = searchParams.get("page") ?? "0"
           router.replace(
-            `?page=${parseInt(pageNumber) > 980 ? 1 : parseInt(pageNumber) + 24}`
+            `?page=${parseInt(pageNumber) > 980 ? INIT_PAGE : parseInt(pageNumber) + DEFAULT_RENDER}`
           )
           router.refresh();
         }
@@ -40,7 +41,7 @@ export function InfiniteScroll({
     <>
       {children}
       <ItemLoading ref={ref} />
-      {Array(11).fill(1).map((_: number, i: number) => (<ItemLoading key={_ + i} />))}
+      {Array(DEFAULT_PLACE_HOLDER).fill(1).map((_: number, i: number) => (<ItemLoading key={_ + i} />))}
     </>
   )
 }
