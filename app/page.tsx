@@ -1,11 +1,16 @@
 import { Suspense } from 'react'
 
+// COMPONENTS
 import { InfiniteScroll } from '@/components/InfiniteScroll/InfiniteScroll'
 import Pokedex from '@/components/Pokedex/Pokedex'
+// INTERFACES
 import { IPokemon } from '@/interface/IPokemon'
+// SERVICES
 import { fetchPokemons } from '@/services/pokemon.services'
+// MODELS
 import { pokemonConstructor } from '@/model/pokemon.model'
-import { DEFAULT_RENDER } from '@/constants/config.constans'
+// CONSTANTS
+import { DEFAULT_RENDER } from '@/constants/config.constants'
 
 type Props = { searchParams: { page: string } }
 export default async function HomePage({ searchParams }: Props) {
@@ -17,7 +22,7 @@ export default async function HomePage({ searchParams }: Props) {
   )
 
   return (
-    <main>
+    <section>
       <h3 className="font-extrabold uppercase pb-2">En directo</h3>
       <ul className="grid grid-cols-2 md:grid-cols-6 gap-3">
         <InfiniteScroll>
@@ -26,6 +31,6 @@ export default async function HomePage({ searchParams }: Props) {
           </Suspense>
         </InfiniteScroll>
       </ul>
-    </main>
+    </section>
   )
 }

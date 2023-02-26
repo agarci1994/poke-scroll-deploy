@@ -3,5 +3,6 @@
   "extends": ["standard", "next/core-web-vitals", "prettier"],
   "rules": {
     "prettier/prettier": "off"
-  }
+  },
+  "eslintIgnore": ["test/*.spec.js"]
 }

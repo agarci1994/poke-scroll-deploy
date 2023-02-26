@@ -1,4 +1,6 @@
 import { IPokemon } from '@/interface/IPokemon'
+
+// COMPONENTS
 import Pokemon from '@/components/Pokemon/Pokemon'
 
 type Props = { pokedex: IPokemon[] }

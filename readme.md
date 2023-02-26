@@ -13,13 +13,13 @@ npm run test
 
 ## Construido con 🛠️
 
-* [NextJS]
-* [Jest
-* [testing-library]
-* [Slint]
-* [Prettier]
-* [Tailwinds CSS]
-* [Typescript]
+- [NextJS](https://beta.nextjs.org/docs)
+- [Jest](https://jestjs.io/es-ES/docs/getting-started)
+- [testing-library](https://testing-library.com/docs/)
+- [Eslint](https://eslint.org/docs/latest/)
+- [Prettier](https://prettier.io/docs/en/)
+- [Tailwinds CSS](https://v2.tailwindcss.com/docs)
+- [Typescript](https://www.typescriptlang.org/docs/)
 
 ## Versionado 📌
 
@@ -35,8 +35,8 @@ Este proyecto está bajo licencia libre
 
 ## Expresiones de Gratitud 🎁
 
-* Comenta a otros sobre este proyecto 📢
-
+- Comenta a otros sobre este proyecto 📢
 
 ---
+
 ⌨️ con ❤️ por [Agarci](https://github.com/agarci1994) 😊

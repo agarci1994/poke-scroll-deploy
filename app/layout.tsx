@@ -1,9 +1,11 @@
 import { ReactNode } from 'react'
 
+// COMPONENTS
 import { Header } from '@/components/Header/Header'
+// CONFIGS
 import { montserrat } from '@/config/fonts.config'
-import { metadata } from "@/config/metadata.config"
-
+import { metadata } from '@/config/metadata.config'
+// STYLES
 import '@/styles/globals.css'
 
 export default function RootLayout({ children }: { children: ReactNode }) {

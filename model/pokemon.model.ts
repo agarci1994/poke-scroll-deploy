@@ -1,3 +1,4 @@
+// INTERFACE
 import { IPokemon } from '@/interface/IPokemon'
 
 export const pokemonConstructor = ({ name, id, sprites, types, stats }: any) =>
