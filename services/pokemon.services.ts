@@ -1,9 +1,9 @@
-import { DEFAULT_RENDER, MAX_POKEMON_AVAILABLE } from "@/constants/config.constans"
+import { MAX_POKEMON_AVAILABLE } from "@/constants/config.constans"
 
 export const fetchPokemons = async (page: number) =>
   await Promise.all(
     new Array(MAX_POKEMON_AVAILABLE)
-      .slice((page - DEFAULT_RENDER), page)
+      .slice(0, page)
       .fill(1)
       .map(async (value, index) =>
         (
