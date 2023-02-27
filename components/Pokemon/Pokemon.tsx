@@ -21,6 +21,9 @@ export default function Pokemon({ image, name, id, types }: IPokemon) {
             )}
           </div>
           <div>
+            <p className="text-sm font-extralight italic">
+              Nº {String(id).padStart(4, '0')}
+            </p>
             <h3 className="m-0 uppercase font-extrabold">{name}</h3>
             <div className="flex space-x-2">
               {types.map((type: string) => (
