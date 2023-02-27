@@ -8,7 +8,7 @@ export default function Pokemon({ image, name, id, types }: IPokemon) {
   return (
     <li className="bg-neutral-100 bg-grey-800 border border-neutral-200 border-black-700 rounded-lg px-4 py-6">
       <Link href={String(id)} className="h-full">
-        <div className="flex flex-col space-y-4 h-full items-center justify-center text-center">
+        <div className="flex flex-col space-y-4 h-full items-center justify-center text-center transform transition duration-500 hover:scale-110">
           <div className="h-28">
             {image && (
               <Image
