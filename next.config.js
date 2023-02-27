@@ -6,7 +6,7 @@ const nextConfig = {
     runtime: 'experimental-edge',
   },
   images: {
-    domains: ['raw.githubusercontent.com'],
+    domains: ['raw.githubusercontent.com', 'img.icons8.com'],
   },
   reactStrictMode: true,
 }

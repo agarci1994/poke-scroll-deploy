@@ -33,7 +33,9 @@ export default function Modal({
                   <h5 className="font-extrabold uppercase">{name}</h5>
                   <p className="text-center">{category}</p>
                   <div className="flex p-2">
-                    <img
+                    <Image
+                      width={10}
+                      height={10}
                       className="w-5"
                       alt="icon-money"
                       src="https://img.icons8.com/doodle/48/null/money.png"
@@ -41,7 +43,9 @@ export default function Modal({
                     <p className="ml-2 text-primary">{cost}</p>
                   </div>
                   <div className="flex">
-                    <img
+                    <Image
+                      width={10}
+                      height={10}
                       className="w-5"
                       alt="icon-power"
                       src="https://img.icons8.com/office/16/null/lightning-bolt.png"
